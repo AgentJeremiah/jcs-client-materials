@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCS Agency — The Three Tax-Free Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:        #0F0F0F;
+  --bg2:       #181818;
+  --bg3:       #222222;
+  --bg4:       #2A2A2A;
+  --border:    rgba(255,255,255,0.09);
+  --border2:   rgba(255,255,255,0.14);
+  --text:      #E8E6E0;
+  --text2:     #9E9C96;
+  --text3:     #6A6864;
+
+  --teal:      #17B8A0;
+  --teal-bg:   rgba(23,184,160,0.1);
+  --teal-bdr:  rgba(23,184,160,0.25);
+  --teal-dim:  #0E8A78;
+
+  --green:     #4CAF6E;
+  --green-bg:  rgba(76,175,110,0.1);
+  --green-bdr: rgba(76,175,110,0.25);
+  --green-dim: #2E8B52;
+
+  --amber:     #E8A030;
+  --amber-bg:  rgba(232,160,48,0.1);
+  --amber-bdr: rgba(232,160,48,0.25);
+  --amber-dim: #B07820;
+
+  --crimson:   #C0392B;
+  --crimson-bg:rgba(192,57,43,0.12);
+  --crimson-bdr:rgba(192,57,43,0.3);
+
+  --blue:      #4A90D9;
+  --blue-bg:   rgba(74,144,217,0.1);
+  --blue-bdr:  rgba(74,144,217,0.25);
+
+  --purple:    #9B59B6;
+  --purple-bg: rgba(155,89,182,0.1);
+  --purple-bdr:rgba(155,89,182,0.25);
+
+  --success:   #27AE60;
+  --success-bg:rgba(39,174,96,0.12);
+}
+
+html{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+
+body{max-width:900px;margin:0 auto;padding:28px 24px 40px}
+
+/* Carbon fiber subtle texture */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg,rgba(255,255,255,0.012) 0,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 5px),
+    repeating-linear-gradient(-45deg,rgba(255,255,255,0.012) 0,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 5px);
+  pointer-events:none;z-index:0
+}
+body>*{position:relative;z-index:1}
+
+/* ── HEADER ── */
+.header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:20px 24px;
+  background:var(--bg2);
+  border:0.5px solid var(--border2);
+  border-radius:12px;
+  margin-bottom:16px;
+}
+.header-left{}
+.agency{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:5px}
+.title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.3px;margin-bottom:3px}
+.subtitle{font-size:12px;color:var(--text2);font-style:italic}
+.print-btn{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 18px;border-radius:4px;border:none;
+  background:var(--crimson);color:#fff;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0
+}
+.print-btn:hover{background:#E74C3C}
+
+/* ── SECTION LABEL ── */
+.sec-label{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--text3);margin-bottom:10px;margin-top:18px;
+  display:flex;align-items:center;gap:7px;
+}
+.sec-label::after{content:'';flex:1;height:0.5px;background:var(--border2)}
+
+/* ── TOOLS GRID ── */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+
+.tool-card{
+  border-radius:10px;
+  border:0.5px solid var(--border2);
+  overflow:hidden;
+}
+
+.tool-head{padding:14px 16px 11px;border-bottom:0.5px solid var(--border2)}
+.tool-head.teal{background:var(--teal-bg);border-color:var(--teal-bdr)}
+.tool-head.green{background:var(--green-bg);border-color:var(--green-bdr)}
+.tool-head.amber{background:var(--amber-bg);border-color:var(--amber-bdr)}
+
+.tool-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+  margin-bottom:7px;
+}
+.teal .tool-num{background:rgba(23,184,160,0.2);color:var(--teal);border:1px solid var(--teal-bdr)}
+.green .tool-num{background:rgba(76,175,110,0.2);color:var(--green);border:1px solid var(--green-bdr)}
+.amber .tool-num{background:rgba(232,160,48,0.2);color:var(--amber);border:1px solid var(--amber-bdr)}
+
+.tool-name{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:2px}
+.tool-sub{font-size:10.5px;color:var(--text2);font-style:italic}
+
+.tool-body{padding:10px 16px;background:var(--bg2)}
+.tool-row{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--border);font-size:11.5px;color:var(--text2);line-height:1.4}
+.tool-row:last-child{border-bottom:none}
+.tool-row i{font-size:13px;flex-shrink:0;margin-top:1px}
+.teal .tool-row i,.tool-card.teal-card .tool-row i{color:var(--teal)}
+.green .tool-row i,.tool-card.green-card .tool-row i{color:var(--green)}
+.amber .tool-row i,.tool-card.amber-card .tool-row i{color:var(--amber)}
+
+/* target icons by card class */
+.teal-card .tool-row i{color:var(--teal)}
+.green-card .tool-row i{color:var(--green)}
+.amber-card .tool-row i{color:var(--amber)}
+
+.tool-tag{
+  display:inline-block;font-size:9.5px;font-weight:600;font-family:'Montserrat',sans-serif;
+  padding:3px 9px;border-radius:20px;margin-top:9px;letter-spacing:.5px;text-transform:uppercase;
+}
+.teal-card .tool-tag{background:var(--teal-bg);color:var(--teal);border:0.5px solid var(--teal-bdr)}
+.green-card .tool-tag{background:var(--green-bg);color:var(--green);border:0.5px solid var(--green-bdr)}
+.amber-card .tool-tag{background:var(--amber-bg);color:var(--amber);border:0.5px solid var(--amber-bdr)}
+
+/* ── FLOW ROW ── */
+.flow-row{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center;gap:0;margin-top:4px}
+.flow-node{background:var(--bg3);border:0.5px solid var(--border2);border-radius:8px;padding:10px 12px;font-size:11.5px;color:var(--text2);line-height:1.45;text-align:center}
+.flow-node strong{display:block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:.2px}
+.flow-arrow{text-align:center;color:var(--text3);font-size:18px;display:flex;align-items:center;justify-content:center}
+
+/* ── SCENARIOS ── */
+.scenarios-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sc-card{border-radius:8px;border:0.5px solid var(--border2);overflow:hidden}
+.sc-head{padding:9px 14px;display:flex;align-items:center;gap:8px;border-bottom:0.5px solid var(--border2)}
+.sc-head i{font-size:15px;flex-shrink:0}
+.sc-title{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:var(--text)}
+.sc-head.danger{background:var(--crimson-bg)}
+.sc-head.danger i{color:var(--crimson)}
+.sc-head.warning{background:var(--amber-bg)}
+.sc-head.warning i{color:var(--amber)}
+.sc-head.info{background:var(--blue-bg)}
+.sc-head.info i{color:var(--blue)}
+.sc-head.neutral{background:var(--bg3)}
+.sc-head.neutral i{color:var(--text2)}
+.sc-body{padding:10px 14px;background:var(--bg2)}
+.sc-step{font-size:11px;color:var(--text2);padding:3px 0;line-height:1.5;display:flex;gap:6px}
+.sc-step::before{content:"→";color:var(--text3);flex-shrink:0;font-weight:600}
+.sc-result{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;font-family:'Montserrat',sans-serif;
+  margin-top:7px;padding:4px 10px;border-radius:20px;
+  background:var(--success-bg);color:var(--success);border:0.5px solid rgba(39,174,96,0.3);
+  letter-spacing:.3px;
+}
+
+/* ── TRUTH BAR ── */
+.truth-bar{
+  background:var(--bg2);border:0.5px solid var(--border2);border-radius:10px;
+  padding:16px 20px;text-align:center;margin-top:4px;
+  border-top:2px solid var(--crimson);
+}
+.truth-line1{font-size:12px;color:var(--text2);margin-bottom:5px}
+.truth-line2{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.2px}
+.brand{font-size:9.5px;color:var(--text3);margin-top:8px;letter-spacing:.5px}
+
+hr.div{border:none;border-top:0.5px solid var(--border);margin:14px 0}
+
+/* ── DAY ONE CALLOUT ── */
+.dayone-bar{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  background:var(--bg2);
+  border:1px solid var(--crimson-bdr);
+  border-left:3px solid var(--crimson);
+  border-radius:10px;
+  padding:16px 20px;
+  margin-top:4px;
+}
+.dayone-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  color:var(--crimson);background:var(--crimson-bg);border:0.5px solid var(--crimson-bdr);
+  padding:3px 10px;border-radius:20px;margin-bottom:10px;
+}
+.dayone-badge i{font-size:12px}
+.dayone-headline{
+  font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;
+  color:var(--text);line-height:1.25;margin-bottom:10px;letter-spacing:-.2px;
+}
+.dayone-body{font-size:11.5px;color:var(--text2);line-height:1.65}
+.dayone-right{display:flex;align-items:center}
+.dayone-stat-row{display:flex;flex-direction:column;gap:8px;width:100%}
+.dayone-stat{
+  background:var(--bg3);border:0.5px solid var(--border2);border-radius:8px;
+  padding:10px 14px;display:flex;align-items:center;gap:14px;
+}
+.dayone-stat-num{
+  font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;
+  color:var(--crimson);white-space:nowrap;flex-shrink:0;min-width:46px;
+}
+.dayone-stat-label{font-size:11px;color:var(--text2);line-height:1.4}
+
+@media (max-width:640px){
+  .dayone-bar{grid-template-columns:1fr}
+}
+
+@media print{
+  body::before{display:none}
+  .print-btn{display:none}
+  body{padding:10px;max-width:100%}
+  @page{margin:8mm;size:landscape}
+}
+@media (max-width:640px){
+  .tools-grid{grid-template-columns:1fr}
+  .flow-row{grid-template-columns:1fr;gap:4px}
+  .flow-arrow{transform:rotate(90deg)}
+  .scenarios-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="agency">JCS Agency &nbsp;·&nbsp; Withstand &amp; Recover From Life™</div>
+    <div class="title">The Three Tax-Free Tools</div>
+    <div class="subtitle">How HECM, Life Insurance, and your retirement accounts work as one coordinated system</div>
+  </div>
+  <button class="print-btn" onclick="window.print()">⬛ Save as PDF</button>
+</div>
+
+<!-- TOOLS SECTION LABEL -->
+<div class="sec-label"><i class="ti ti-shield-check" aria-hidden="true"></i> Each tool funds the next — together they protect everything you've built</div>
+
+<!-- THREE TOOL CARDS -->
+<div class="tools-grid">
+
+  <!-- HECM -->
+  <div class="tool-card teal-card">
+    <div class="tool-head teal">
+      <div class="tool-num">1</div>
+      <div class="tool-name">HECM Line of Credit</div>
+      <div class="tool-sub">Home equity, federally protected</div>
+    </div>
+    <div class="tool-body">
+      <div class="tool-row"><i class="ti ti-lock-open" aria-hidden="true"></i>Cannot be frozen or reduced by lender</div>
+      <div class="tool-row"><i class="ti ti-trending-up" aria-hidden="true"></i>Unused balance grows ~4–7%/yr compounding</div>
+      <div class="tool-row"><i class="ti ti-ban" aria-hidden="true"></i>No income qualification — ever</div>
+      <div class="tool-row"><i class="ti ti-receipt-off" aria-hidden="true"></i>Draws are not income — zero tax impact</div>
+      <div class="tool-row"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Pay 401(k) taxes with LOC — rebuilds dollar-for-dollar</div>
+      <div class="tool-row"><i class="ti ti-coin" aria-hidden="true"></i>Funds LIRP premiums without touching investments</div>
+      <span class="tool-tag">Tax-free tool #1</span>
+    </div>
+  </div>
+
+  <!-- LIRP -->
+  <div class="tool-card green-card">
+    <div class="tool-head green">
+      <div class="tool-num">2</div>
+      <div class="tool-name">Life Insurance (LIRP + FCB)</div>
+      <div class="tool-sub">MEC-optimized, non-correlated growth</div>
+    </div>
+    <div class="tool-body">
+      <div class="tool-row"><i class="ti ti-wallet" aria-hidden="true"></i>Cash value is YOUR money — not use-it-or-lose-it</div>
+      <div class="tool-row"><i class="ti ti-chart-line" aria-hidden="true"></i>Grows tax-free regardless of market performance</div>
+      <div class="tool-row"><i class="ti ti-hand-money" aria-hidden="true"></i>Tax-free loans anytime — no approval needed</div>
+      <div class="tool-row"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>FCB rider activates for LTC — not use-it-or-lose-it</div>
+      <div class="tool-row"><i class="ti ti-shield" aria-hidden="true"></i>Death benefit 2–3× premiums passes tax-free to heirs</div>
+      <div class="tool-row"><i class="ti ti-replace" aria-hidden="true"></i>Replaces 401(k) draws — keeps taxable income lower</div>
+      <span class="tool-tag">Tax-free tool #2</span>
+    </div>
+  </div>
+
+  <!-- ROTH / 401K -->
+  <div class="tool-card amber-card">
+    <div class="tool-head amber">
+      <div class="tool-num">3</div>
+      <div class="tool-name">Roth / Qualified Accounts</div>
+      <div class="tool-sub">Tax-deferred converting to tax-free</div>
+    </div>
+    <div class="tool-body">
+      <div class="tool-row"><i class="ti ti-receipt-off" aria-hidden="true"></i>Roth withdrawals 100% tax-free forever</div>
+      <div class="tool-row"><i class="ti ti-clock" aria-hidden="true"></i>No RMDs on Roth — compounds on your timeline</div>
+      <div class="tool-row"><i class="ti ti-arrows-sort" aria-hidden="true"></i>Convert now while tax rates are historically low</div>
+      <div class="tool-row"><i class="ti ti-building-bank" aria-hidden="true"></i>HECM funds conversion taxes — no forced selling</div>
+      <div class="tool-row"><i class="ti ti-chart-area" aria-hidden="true"></i>401(k) compounds longer — never first line of defense</div>
+      <div class="tool-row"><i class="ti ti-users" aria-hidden="true"></i>Roth inheritance passes with no income tax to heirs</div>
+      <span class="tool-tag">Tax-free tool #3</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- FLOW SECTION -->
+<div class="sec-label" style="margin-top:20px"><i class="ti ti-arrows-right-left" aria-hidden="true"></i> How the money loop works — each tool feeds the next</div>
+
+<div class="flow-row">
+  <div class="flow-node">
+    <strong>HECM LOC grows quietly</strong>
+    Unused credit compounds. Funds premiums and Roth conversion taxes — completely tax-free.
+  </div>
+  <div class="flow-arrow"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+  <div class="flow-node">
+    <strong>LIRP builds cash value</strong>
+    Funded by HECM. Grows outside the market. Replaces 401(k) draws in high-tax years. LTC activates via FCB rider.
+  </div>
+  <div class="flow-arrow"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+  <div class="flow-node">
+    <strong>401(k) compounds longer</strong>
+    Never the first thing called on. Converts to Roth on your schedule — not the IRS's. Heirs receive it tax-free.
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- DAY ONE CALLOUT -->
+<div class="dayone-bar">
+  <div class="dayone-left">
+    <div class="dayone-badge"><i class="ti ti-bolt" aria-hidden="true"></i> Activated on day one</div>
+    <div class="dayone-headline">This system is fully operational the moment it's in place.</div>
+    <div class="dayone-body">There is no runway. No accumulation period before it kicks in. No waiting for cash value to "mature" before you can access it. If something goes wrong tomorrow — a health event, a market crash, a tax bill you didn't expect — every layer of this system is already standing between you and a forced decision. Self-insurance requires years to build. This is protection from the first day forward.</div>
+  </div>
+  <div class="dayone-right">
+    <div class="dayone-stat-row">
+      <div class="dayone-stat">
+        <div class="dayone-stat-num">Day 1</div>
+        <div class="dayone-stat-label">HECM LOC available to draw — no waiting period</div>
+      </div>
+      <div class="dayone-stat">
+        <div class="dayone-stat-num">Day 1</div>
+        <div class="dayone-stat-label">LIRP death benefit &amp; FCB rider fully in force</div>
+      </div>
+      <div class="dayone-stat">
+        <div class="dayone-stat-num">Day 1</div>
+        <div class="dayone-stat-label">401(k) protected from being first line of defense</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- SCENARIOS -->
+<div class="sec-label"><i class="ti ti-alert-triangle" aria-hidden="true"></i> When something goes wrong — which tool responds and how</div>
+
+<div class="scenarios-grid">
+
+  <div class="sc-card">
+    <div class="sc-head danger">
+      <i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>
+      <span class="sc-title">Long-term care event</span>
+    </div>
+    <div class="sc-body">
+      <div class="sc-step">FCB rider on LIRP activates — death benefit converts to living benefit for care costs</div>
+      <div class="sc-step">HECM LOC bridges any gap — draws are tax-free, no income qualification required</div>
+      <div class="sc-step">401(k) and investments stay untouched — no forced liquidation under pressure</div>
+      <span class="sc-result"><i class="ti ti-check" aria-hidden="true"></i>&nbsp; Portfolio remains intact</span>
+    </div>
+  </div>
+
+  <div class="sc-card">
+    <div class="sc-head warning">
+      <i class="ti ti-trending-down" aria-hidden="true"></i>
+      <span class="sc-title">Market crash — early retirement</span>
+    </div>
+    <div class="sc-body">
+      <div class="sc-step">Draw LIRP cash value via tax-free loan — avoid selling investments at a loss</div>
+      <div class="sc-step">Draw HECM LOC as backup buffer — federally protected, always available</div>
+      <div class="sc-step">Portfolio recovers at full allocation — nothing sold during the downturn</div>
+      <span class="sc-result"><i class="ti ti-check" aria-hidden="true"></i>&nbsp; Sequence risk eliminated</span>
+    </div>
+  </div>
+
+  <div class="sc-card">
+    <div class="sc-head info">
+      <i class="ti ti-receipt-tax" aria-hidden="true"></i>
+      <span class="sc-title">Tax spike / RMD pressure at 73</span>
+    </div>
+    <div class="sc-body">
+      <div class="sc-step">Draw HECM LOC instead of 401(k) — removes taxable income from the equation entirely</div>
+      <div class="sc-step">Use LIRP loans to supplement — zero reportable income, AGI stays lower</div>
+      <div class="sc-step">Medicare IRMAA surcharges reduced — tax bracket remains controlled</div>
+      <span class="sc-result"><i class="ti ti-check" aria-hidden="true"></i>&nbsp; Tax burden controlled</span>
+    </div>
+  </div>
+
+  <div class="sc-card">
+    <div class="sc-head neutral">
+      <i class="ti ti-user-off" aria-hidden="true"></i>
+      <span class="sc-title">Loss of control — health or cognitive</span>
+    </div>
+    <div class="sc-body">
+      <div class="sc-step">HECM LOC continues — POA can draw without re-qualification or approval</div>
+      <div class="sc-step">LIRP FCB rider activates automatically for qualifying care events</div>
+      <div class="sc-step">System operates without you — no active decisions required in a crisis</div>
+      <span class="sc-result"><i class="ti ti-check" aria-hidden="true"></i>&nbsp; No forced decisions</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- TRUTH BAR -->
+<div style="margin-top:14px">
+<div class="truth-bar">
+  <div class="truth-line1">None of this is about earning more.</div>
+  <div class="truth-line2">It's about never being forced into a bad decision under pressure.</div>
+  <div class="brand">JCS Agency &nbsp;·&nbsp; Jeremiah Stephen, ChFC &nbsp;·&nbsp; 360-695-4408 &nbsp;·&nbsp; 4800 NW Camas Meadows Dr. #210, Camas WA 98607 &nbsp;·&nbsp; For discussion purposes only · Not financial, tax, or legal advice</div>
+</div>
+</div>
+
+</body>
+</html>

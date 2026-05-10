@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCS Agency — Six Risks That Break Retirement Plans</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:       #FAFAF8;
+  --bg2:      #F4F3EF;
+  --bg3:      #ECEAE4;
+  --white:    #FFFFFF;
+  --border:   rgba(0,0,0,0.08);
+  --border2:  rgba(0,0,0,0.13);
+  --text:     #1A1A18;
+  --text2:    #5A5955;
+  --text3:    #9A9894;
+  --crimson:  #8B0000;
+  --crimson-lt:#C0392B;
+  --crimson-bg:rgba(139,0,0,0.06);
+  --crimson-bdr:rgba(139,0,0,0.2);
+
+  --r1-col:  #1B5FA8;
+  --r1-bg:   rgba(27,95,168,0.07);
+  --r1-bdr:  rgba(27,95,168,0.2);
+
+  --r2-col:  #B86A00;
+  --r2-bg:   rgba(184,106,0,0.07);
+  --r2-bdr:  rgba(184,106,0,0.2);
+
+  --r3-col:  #2E7D32;
+  --r3-bg:   rgba(46,125,50,0.07);
+  --r3-bdr:  rgba(46,125,50,0.2);
+
+  --r4-col:  #6A1B9A;
+  --r4-bg:   rgba(106,27,154,0.07);
+  --r4-bdr:  rgba(106,27,154,0.2);
+
+  --r5-col:  #B71C1C;
+  --r5-bg:   rgba(183,28,28,0.07);
+  --r5-bdr:  rgba(183,28,28,0.2);
+
+  --r6-col:  #1A4A6A;
+  --r6-bg:   rgba(26,74,106,0.07);
+  --r6-bdr:  rgba(26,74,106,0.2);
+}
+
+html{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+
+body{max-width:640px;margin:0 auto;padding:0 0 48px}
+
+/* ── HEADER ── */
+.header{
+  background:var(--white);
+  border-bottom:1px solid var(--border2);
+  padding:24px 24px 20px;
+  position:sticky;top:0;z-index:100;
+}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.agency{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--crimson);
+}
+.print-btn{
+  font-family:'Montserrat',sans-serif;font-size:8.5px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;border-radius:4px;border:none;
+  background:var(--crimson);color:#fff;cursor:pointer;
+  transition:background .2s;
+}
+.print-btn:hover{background:var(--crimson-lt)}
+.header-title{
+  font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;
+  color:var(--text);line-height:1.15;letter-spacing:-.3px;margin-bottom:4px;
+}
+.header-sub{font-size:13px;color:var(--text2);line-height:1.5}
+
+/* ── INTRO STRIP ── */
+.intro{
+  background:var(--crimson-bg);
+  border-bottom:1px solid var(--crimson-bdr);
+  padding:16px 24px;
+  font-size:13px;color:var(--text2);line-height:1.65;
+}
+.intro strong{color:var(--text);font-weight:600}
+
+/* ── INSTRUCTIONS ── */
+.instructions{
+  padding:16px 24px 0;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.instr-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--bg3);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.instr-icon i{font-size:14px;color:var(--text2)}
+.instr-text{font-size:12px;color:var(--text2);line-height:1.55;padding-top:4px}
+
+/* ── RISK CARDS ── */
+.risks{padding:16px 16px 0;display:flex;flex-direction:column;gap:12px}
+
+.risk-card{
+  background:var(--white);
+  border-radius:12px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+
+.risk-head{
+  padding:16px 18px 13px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:14px;
+}
+.risk-num-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.risk-num{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;
+  flex-shrink:0;
+}
+.risk-icon{font-size:11px;color:var(--text3)}
+.risk-title-block{}
+.risk-name{
+  font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;
+  line-height:1.2;margin-bottom:3px;letter-spacing:-.2px;
+}
+.risk-tagline{font-size:12px;line-height:1.4}
+
+.risk-body{padding:14px 18px}
+.risk-stat{
+  padding:10px 14px;border-radius:8px;margin-bottom:12px;
+  font-size:12.5px;line-height:1.55;
+}
+.risk-stat strong{font-weight:600;display:block;margin-bottom:2px;font-size:13px}
+
+.risk-what-label{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--text3);
+  margin-bottom:7px;
+}
+.risk-what{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+
+.risk-check-label{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--text3);
+  margin-bottom:8px;
+}
+.risk-checks{display:flex;flex-direction:column;gap:6px}
+.risk-check{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 12px;border-radius:7px;
+  background:var(--bg2);border:0.5px solid var(--border);
+  font-size:12px;color:var(--text2);line-height:1.4;cursor:pointer;
+  transition:background .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.risk-check:hover{background:var(--bg3)}
+.risk-check.checked{background:var(--bg2)}
+.check-box{
+  width:18px;height:18px;border-radius:4px;
+  border:1.5px solid var(--border2);background:var(--white);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  transition:all .15s;margin-top:1px;
+}
+.check-box i{font-size:12px;color:var(--white);display:none}
+.risk-check.checked .check-box{border-color:currentColor}
+.risk-check.checked .check-box i{display:block}
+
+/* per-risk colors */
+.r1 .risk-num{background:var(--r1-bg);color:var(--r1-col);border:1px solid var(--r1-bdr)}
+.r1 .risk-name{color:var(--r1-col)}
+.r1 .risk-tagline{color:var(--r1-col);opacity:.7}
+.r1 .risk-stat{background:var(--r1-bg);border:0.5px solid var(--r1-bdr)}
+.r1 .risk-stat strong{color:var(--r1-col)}
+.r1 .risk-check.checked .check-box{background:var(--r1-col);border-color:var(--r1-col)}
+.r1 .risk-check.checked{color:var(--r1-col)}
+
+.r2 .risk-num{background:var(--r2-bg);color:var(--r2-col);border:1px solid var(--r2-bdr)}
+.r2 .risk-name{color:var(--r2-col)}
+.r2 .risk-tagline{color:var(--r2-col);opacity:.7}
+.r2 .risk-stat{background:var(--r2-bg);border:0.5px solid var(--r2-bdr)}
+.r2 .risk-stat strong{color:var(--r2-col)}
+.r2 .risk-check.checked .check-box{background:var(--r2-col);border-color:var(--r2-col)}
+.r2 .risk-check.checked{color:var(--r2-col)}
+
+.r3 .risk-num{background:var(--r3-bg);color:var(--r3-col);border:1px solid var(--r3-bdr)}
+.r3 .risk-name{color:var(--r3-col)}
+.r3 .risk-tagline{color:var(--r3-col);opacity:.7}
+.r3 .risk-stat{background:var(--r3-bg);border:0.5px solid var(--r3-bdr)}
+.r3 .risk-stat strong{color:var(--r3-col)}
+.r3 .risk-check.checked .check-box{background:var(--r3-col);border-color:var(--r3-col)}
+.r3 .risk-check.checked{color:var(--r3-col)}
+
+.r4 .risk-num{background:var(--r4-bg);color:var(--r4-col);border:1px solid var(--r4-bdr)}
+.r4 .risk-name{color:var(--r4-col)}
+.r4 .risk-tagline{color:var(--r4-col);opacity:.7}
+.r4 .risk-stat{background:var(--r4-bg);border:0.5px solid var(--r4-bdr)}
+.r4 .risk-stat strong{color:var(--r4-col)}
+.r4 .risk-check.checked .check-box{background:var(--r4-col);border-color:var(--r4-col)}
+.r4 .risk-check.checked{color:var(--r4-col)}
+
+.r5 .risk-num{background:var(--r5-bg);color:var(--r5-col);border:1px solid var(--r5-bdr)}
+.r5 .risk-name{color:var(--r5-col)}
+.r5 .risk-tagline{color:var(--r5-col);opacity:.7}
+.r5 .risk-stat{background:var(--r5-bg);border:0.5px solid var(--r5-bdr)}
+.r5 .risk-stat strong{color:var(--r5-col)}
+.r5 .risk-check.checked .check-box{background:var(--r5-col);border-color:var(--r5-col)}
+.r5 .risk-check.checked{color:var(--r5-col)}
+
+.r6 .risk-num{background:var(--r6-bg);color:var(--r6-col);border:1px solid var(--r6-bdr)}
+.r6 .risk-name{color:var(--r6-col)}
+.r6 .risk-tagline{color:var(--r6-col);opacity:.7}
+.r6 .risk-stat{background:var(--r6-bg);border:0.5px solid var(--r6-bdr)}
+.r6 .risk-stat strong{color:var(--r6-col)}
+.r6 .risk-check.checked .check-box{background:var(--r6-col);border-color:var(--r6-col)}
+.r6 .risk-check.checked{color:var(--r6-col)}
+
+/* ── SCORE BAR ── */
+.score-wrap{
+  margin:16px 16px 0;
+  background:var(--white);border-radius:12px;
+  border:1px solid var(--border);padding:16px 18px;
+}
+.score-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.score-label{
+  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--text3);
+}
+.score-count{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--text);
+}
+.score-count span{color:var(--crimson)}
+.score-track{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-bottom:10px}
+.score-fill{
+  height:100%;border-radius:3px;background:var(--crimson);
+  transition:width .4s ease;width:0%;
+}
+.score-msg{font-size:12px;color:var(--text2);line-height:1.55;font-style:italic}
+
+/* ── FOOTER ── */
+.footer{
+  margin:20px 16px 0;
+  background:var(--white);border-radius:12px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.footer-top{
+  padding:16px 18px;
+  border-bottom:1px solid var(--border);
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;
+}
+.footer-cta-label{
+  font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:6px;
+}
+.footer-cta-headline{
+  font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;
+  color:var(--text);line-height:1.25;margin-bottom:8px;letter-spacing:-.2px;
+}
+.footer-cta-body{font-size:12px;color:var(--text2);line-height:1.6}
+.qr-wrap{
+  width:80px;height:80px;flex-shrink:0;
+  border:1px solid var(--border2);border-radius:8px;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  background:var(--white);
+}
+.qr-wrap img{width:80px;height:80px}
+.footer-bottom{
+  padding:12px 18px;
+  background:var(--bg2);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.footer-brand{
+  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--crimson);
+}
+.footer-contact{font-size:11px;color:var(--text2)}
+.footer-disclaimer{
+  width:100%;font-size:10px;color:var(--text3);
+  border-top:0.5px solid var(--border);padding-top:8px;margin-top:4px;
+}
+
+/* ── PRINT ── */
+@media print{
+  .header{position:static}
+  .print-btn{display:none}
+  .risk-check{break-inside:avoid}
+  .risk-card{break-inside:avoid;page-break-inside:avoid}
+  .score-wrap,.footer{break-inside:avoid}
+  @page{margin:12mm;size:portrait}
+  body{padding-bottom:0}
+  .risks{padding:8px 0 0}
+  .footer-top{grid-template-columns:1fr}
+  .qr-wrap{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="agency">JCS Agency &nbsp;·&nbsp; Withstand &amp; Recover From Life™</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+  <div class="header-title">Six Risks That Can Break Any Retirement Plan</div>
+  <div class="header-sub">Regardless of how well you've prepared — these are the gaps most plans don't account for.</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <strong>This is not a sales document.</strong> It's a diagnostic. Read through each risk, check the ones that apply to your situation, and use it as a starting point for an honest conversation about where your plan is strong — and where it might be exposed.
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="instructions">
+  <div class="instr-icon"><i class="ti ti-checklist" aria-hidden="true"></i></div>
+  <div class="instr-text">Tap or click each checkbox that applies to your situation. Your score at the bottom will show which risks are unaddressed — and how urgent the conversation is.</div>
+</div>
+
+<!-- RISK CARDS -->
+<div class="risks">
+
+  <!-- RISK 1: LONGEVITY -->
+  <div class="risk-card r1">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">1</div>
+        <i class="ti ti-hourglass-empty risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Longevity Risk</div>
+        <div class="risk-tagline">Outliving your savings due to living longer than expected</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data at 65:</strong>
+        34% of people reaching age 65 will live to 90. 12% will reach 95 or beyond. The average retiree at 65 has 19.5 years of retirement ahead — and that's the average. Half will live longer. Every additional year costs money your plan may not have modeled.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">You run out of money at 88. Social Security continues, but the assets you planned to live on are gone. You haven't done anything wrong — you just lived. Most retirement plans are modeled to age 85 or 87. A plan designed to 95 looks very different from one designed to 85.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My income plan is designed to last to age 95 or beyond</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>At least one of my income sources is guaranteed for life regardless of how long I live</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have a plan for the "slow-go" and "no-go" years — not just the active early retirement years</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK 2: MARKET VOLATILITY -->
+  <div class="risk-card r2">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">2</div>
+        <i class="ti ti-chart-line risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Market Volatility Risk</div>
+        <div class="risk-tagline">A major downturn early in retirement that you can't recover from</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data:</strong>
+        The S&P 500 averages 2 to 2.5 years to recover prior highs after a significant downturn. Losing 30% in Year 2 of retirement and withdrawing to fund living expenses permanently locks in those losses. This is called sequence-of-returns risk — and it hits hardest at exactly the wrong time.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">The market drops 35% the year after you retire. You need $60,000 to live on. You sell shares at the bottom to raise the cash. When the market recovers, you own fewer shares than before — so you recover less. You repeat this for two more years. The portfolio never fully comes back.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have a source of income or liquidity completely separate from my investment portfolio</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>If the market dropped 30% tomorrow, I could cover 2+ years of expenses without selling investments</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My plan has been stress-tested against a 2008-level event in Year 1 or 2 of retirement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK 3: INFLATION -->
+  <div class="risk-card r3">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">3</div>
+        <i class="ti ti-trending-up risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Inflation Risk</div>
+        <div class="risk-tagline">Rising costs that quietly erode what your money can actually buy</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data:</strong>
+        At a historical average of 3% annually, $50,000 of purchasing power today requires approximately $90,500 in 20 years to buy the same things. Fixed income sources — pensions, annuities, Social Security cost-of-living adjustments — may not keep pace. What feels comfortable at 65 can feel tight at 80.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">Your pension covers your expenses at 67. By 78, groceries, utilities, insurance, and healthcare have all risen while your pension payment has stayed the same. You start drawing down savings to fill the gap — money you planned to leave for your family or keep for emergencies.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>Some portion of my assets is still growing to offset rising costs over time</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My income plan accounts for costs being significantly higher in 15–20 years</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have at least one income source that adjusts with inflation or grows over time</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK 4: TAX RISK -->
+  <div class="risk-card r4">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">4</div>
+        <i class="ti ti-receipt-tax risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Tax Risk</div>
+        <div class="risk-tagline">Future tax rates and forced withdrawals that take more than you planned</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data:</strong>
+        Required Minimum Distributions (RMDs) begin at age 73 and force taxable withdrawals from traditional IRAs and 401(k)s whether you need the money or not. Current federal tax rates are historically low — the Tax Cuts and Jobs Act provisions expire in 2025. The U.S. national debt suggests rates are unlikely to go down long-term.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">At 73, you're forced to withdraw $80,000 from your IRA even though you don't need it. This pushes your income into a higher bracket, increases your Medicare premiums through IRMAA surcharges, and potentially makes more of your Social Security taxable. You pay taxes on money you weren't planning to spend.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have a plan to reduce my tax-deferred balance before RMDs begin at 73</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have at least one tax-free income source I can draw from in high-income years</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I've modeled what my RMDs look like at 75, 80, and 85 — not just today</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK 5: HEALTHCARE / LTC -->
+  <div class="risk-card r5">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">5</div>
+        <i class="ti ti-heart-rate-monitor risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Healthcare &amp; Long-Term Care Risk</div>
+        <div class="risk-tagline">A care event that can deplete decades of savings in just a few years</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data:</strong>
+        41% of men and 51% of women over 65 will need paid long-term care. 35% will enter a nursing home. In Portland/Vancouver: nursing home costs run $9,000–$12,000/month ($108,000–$144,000/year). Memory care: $6,000–$9,000/month. In-home care: $30–$43/hour. A 5-year care event can cost $500,000–$720,000 — from a single portfolio.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">Your spouse needs memory care at $7,500/month. You spend $90,000 per year from your savings for four years. That's $360,000 gone — before you account for your own living expenses during that period, your own future care needs, or what you hoped to leave your family. The portfolio you spent 40 years building is cut in half in less than five years.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have a specific plan — not just savings — for a multi-year long-term care event</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My LTC plan protects my spouse's finances if I need care first</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My plan for LTC doesn't require me to be healthy and cognitively intact to activate it</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK 6: LEGACY -->
+  <div class="risk-card r6">
+    <div class="risk-head">
+      <div class="risk-num-wrap">
+        <div class="risk-num">6</div>
+        <i class="ti ti-heart-handshake risk-icon" aria-hidden="true"></i>
+      </div>
+      <div class="risk-title-block">
+        <div class="risk-name">Legacy Risk</div>
+        <div class="risk-tagline">Unintentional erosion of what you planned to pass on to family</div>
+      </div>
+    </div>
+    <div class="risk-body">
+      <div class="risk-stat">
+        <strong>The data:</strong>
+        Traditional IRA and 401(k) assets passed to heirs are subject to ordinary income tax — your heirs must withdraw within 10 years under current rules (SECURE Act 2.0), potentially pushing them into higher brackets. Assets consumed by LTC costs, taxes, or market losses reduce what actually transfers. Estate shrinkage is often silent and unplanned.
+      </div>
+      <div class="risk-what-label">What it looks like in real life</div>
+      <div class="risk-what">You leave $800,000 in a traditional IRA to your children. They're required to withdraw it within 10 years. Between their own income and the forced IRA distributions, they pay 32–37% in federal tax on much of it. The $800,000 you built becomes $520,000 after taxes. No one made a mistake — the tax bill was always there, waiting.</div>
+      <div class="risk-check-label">Check what applies to you</div>
+      <div class="risk-checks">
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I know the actual after-tax value of what my heirs will receive — not just the account balance</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>My estate plan accounts for the tax bill my heirs will inherit along with my assets</div>
+        <div class="risk-check" onclick="toggle(this)"><div class="check-box"><i class="ti ti-check"></i></div>I have at least one tax-free asset that passes without a tax burden attached to it</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SCORE BAR -->
+<div class="score-wrap">
+  <div class="score-top">
+    <div class="score-label">Your plan coverage</div>
+    <div class="score-count"><span id="checked-count">0</span> of 18 addressed</div>
+  </div>
+  <div class="score-track"><div class="score-fill" id="score-fill"></div></div>
+  <div class="score-msg" id="score-msg">Check each item above that your current plan already addresses.</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-cta-label">Next step</div>
+      <div class="footer-cta-headline">Let's look at what your plan doesn't cover yet.</div>
+      <div class="footer-cta-body">This isn't about adding products. It's about making sure the plan you've already built holds under every condition — not just the ones you planned for. A 20-minute conversation is all it takes to see where the gaps are.</div>
+    </div>
+    <div class="qr-wrap" id="qr-code"></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-brand">JCS Agency</div>
+    <div class="footer-contact">Jeremiah Stephen, ChFC &nbsp;·&nbsp; 360-695-4408</div>
+    <div class="footer-contact">4800 NW Camas Meadows Dr. #210, Camas WA 98607</div>
+    <div class="footer-disclaimer">For discussion purposes only. Not financial, tax, or legal advice. Statistics sourced from SSA Actuarial Tables 2022, CDC, AALTCI, Genworth Cost of Care Survey 2024, and HUD/FHA HECM program data.</div>
+  </div>
+</div>
+
+<script>
+function toggle(el) {
+  el.classList.toggle('checked');
+  updateScore();
+}
+
+function updateScore() {
+  const total = document.querySelectorAll('.risk-check').length;
+  const checked = document.querySelectorAll('.risk-check.checked').length;
+  const pct = Math.round((checked / total) * 100);
+  document.getElementById('checked-count').textContent = checked;
+  document.getElementById('score-fill').style.width = pct + '%';
+  const msg = document.getElementById('score-msg');
+  if (checked === 0) {
+    msg.textContent = 'Check each item above that your current plan already addresses.';
+  } else if (pct < 35) {
+    msg.textContent = 'Several significant gaps remain. A conversation about your plan is worth prioritizing before something changes.';
+  } else if (pct < 65) {
+    msg.textContent = 'Your plan covers some ground — but there are meaningful exposures worth discussing, especially around the unchecked areas.';
+  } else if (pct < 90) {
+    msg.textContent = 'Good coverage overall. The remaining gaps are worth a focused conversation — small exposures can compound quickly.';
+  } else {
+    msg.textContent = 'Strong coverage across all six risks. A quick review to confirm everything is still coordinated and current is still worth the time.';
+  }
+}
+
+// Generate QR code pointing to a placeholder — replace the URL with your actual website or scheduling link
+try {
+  new QRCode(document.getElementById('qr-code'), {
+    text: 'https://jcsagency.com',
+    width: 80,
+    height: 80,
+    colorDark: '#1A1A18',
+    colorLight: '#FFFFFF',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+} catch(e) {
+  document.getElementById('qr-code').innerHTML = '<div style="font-size:9px;color:#9A9894;text-align:center;padding:8px;line-height:1.4">Scan to<br>visit us</div>';
+}
+</script>
+</body>
+</html>
